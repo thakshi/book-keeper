@@ -1,0 +1,204 @@
+.front_right-arrow {
+    height: 65px;
+    width: 175px;
+}
+
+.event_box {
+    height: 66px;
+    width: 136px;
+    background-image: url("../images/event_box.png");
+    background-size: 136px 66px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 66px;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+.right-arrow {
+    height: 56px;
+    width: 167px;
+}
+
+.round_arrow {
+    height: 100px;
+    width: 65px;
+}
+
+.three_side_arrow {
+    height: 100px;
+    width: 100px;
+}
+
+.south_arrow {
+    height: 160px;
+    width: 80px;
+}
+
+.sales_order {
+    position: absolute;
+    top: 100px;
+    left: 240px;
+}
+
+.sales_order_to_purchase_order {
+    position: absolute;
+    top: 105px;
+    left: 384px;
+}
+
+.estimate_to_sales_order {
+    position: absolute;
+    top: 104px;
+    left: 53px;
+}
+
+.estimate {
+    position: absolute;
+    top: 172px;
+    left: 22px;
+}
+.purchase_order{
+    position: absolute;
+    top: 102px;
+    left: 550px;
+}
+
+#purchase_order_to_gin {
+    position: absolute;
+    top: 146px;
+    left: 700px;
+}
+
+#gin {
+    position: absolute;
+    top: 228px;
+    left: 570px;
+}
+
+#grn_to_gin {
+    position: absolute;
+    top: 234px;
+    left: 400px;
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Safari */
+    transform: rotate(180deg);
+}
+
+#grn {
+    position: absolute;
+    top: 228px;
+    left: 270px;
+}
+
+#estimate_to_invoices {
+    position: absolute;
+    top: 245px;
+    left: 36px;
+}
+
+#invoices {
+    position: absolute;
+    top: 410px;
+    left: 22px;
+}
+
+#gin_to_enter_and_pay_bill {
+    position: absolute;
+    top: 298px;
+    left: 590px;
+}
+
+#enter_bill {
+    position: absolute;
+    top: 320px;
+    left: 440px;
+}
+
+#pay_bill {
+    position: absolute;
+    top: 320px;
+    left: 720px;
+}
+
+#receive_payments {
+    position: absolute;
+    top: 410px;
+    left: 300px;
+}
+
+#deposit {
+    position: absolute;
+    top: 410px;
+    left: 580px;
+}
+
+#write_check {
+    position: absolute;
+    top: 500px;
+    left: 450px;
+}
+
+#reconciliation {
+    position: absolute;
+    top: 500px;
+    left: 730px;
+}
+
+#deposit_to_write_check_and_reconciliation {
+    position: absolute;
+    top: 475px;
+    left: 605px;
+}
+
+#invoices_to_receive_payments {
+    position: absolute;
+    top: 420px;
+    left: 146px;
+}
+
+#estimate_to_grn {
+    position: absolute;
+    top: 238px;
+    left: 100px;
+}
+
+#receive_payments_to_deposit {
+    position: absolute;
+    top: 420px;
+    left: 425px;
+}
+
+#invoice-table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#invoice-table td, #invoice-table th {
+    font-size: 1em;
+    border: 1px solid #0a0a3e;
+    padding: 3px 7px 2px 7px;
+}
+
+#invoice-table th {
+    font-size: 1.1em;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: #7195ff;
+    color: #ffffff;
+}
+
+#invoice-table tr.alt td {
+    color: #000000;
+    background-color: #EAF2D3;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+    background-color: #e4e4ff;
+}

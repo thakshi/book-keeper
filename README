@@ -1,0 +1,5 @@
+how to use this software
+
+1. start tomcat
+2. you can access the book-keeper by issuing following url
+   http://localhost:8080/accountApp/

@@ -8,6 +8,7 @@
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.tabletojson.js"></script>
     <script src="js/custom.js"></script>
 
     <title>create an invoice</title>
@@ -55,7 +56,7 @@
             <div class="col-md-4">
                 <input type="submit" name="save_and_close" class="btn btn-primary" value="Save & Close">
                 <input type="submit" name="save_and_new" class="btn btn-primary" value="Save & New">
-                <input type="button" class="btn btn-primary" value="Clear">
+                <input type="button" class="btn btn-primary clear-button" value="Clear">
             </div>
             <div class="col-md-2"></div>
         </div>

@@ -12,12 +12,9 @@ public class InvoiceServlet extends HttpServlet {
 
     public void doPost(HttpServletRequest req,HttpServletResponse res) throws ServletException,IOException
     {
-        String user="lakshman";
-        String password="udayakantha";
+        res.setHeader("Content-Type", "text/html");
+        PrintWriter writer = res.getWriter();
+        writer.write("invoice insert successfully");
 
-        PrintWriter pw=res.getWriter();
-
-        pw.println("<h1> Welcome "+user+"</h1> <br/>");
-        pw.println("<h2> Your Password is "+password+"</h2>");
     }
 }

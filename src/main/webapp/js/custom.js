@@ -13,11 +13,17 @@ $( document ).ready(function() {
 
     $( "#date" ).datepicker();
 
+    $(".clear-button").click(function(){
+        $("#invoice_form")[0].reset();
+    });
+
     //callback handler for form submit
     $("#invoice_form").submit(function(e)
     {
         var postData = $(this).serializeArray();
         var formURL = $(this).attr("action");
+        var tableData = JSON.stringify($('#invoice-table').tableToJSON());
+        postData[2].value = tableData;
         $.ajax(
             {
                 url : formURL,
@@ -25,7 +31,7 @@ $( document ).ready(function() {
                 data : postData,
                 success:function(data, textStatus, jqXHR)
                 {
-                    //data: return data from server
+                    alert(data);
                 },
                 error: function(jqXHR, textStatus, errorThrown)
                 {

@@ -45,7 +45,8 @@
                     <tr>
                         <th>Name</th>
                         <th>Unit Price</th>
-                        <th>quantity</th>
+                        <th>Quantity</th>
+                        <th>Amount</th>
                     </tr>
                 </table>
             </div>

@@ -21,6 +21,6 @@
       </dependency>
   </dependencies>
   <build>
-    <finalName>accountApp</finalName>
+    <finalName>book-keeper</finalName>
   </build>
 </project>

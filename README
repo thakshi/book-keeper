@@ -5,4 +5,4 @@ how to use this software
 3. you can find the built war file in target folder. copy this acccountApp.war file to web app directory in tomcat root folder.
    tomcat will auto deploy the war file after several seconds
 4. you can access the book-keeper by issuing following url
-   http://localhost:8080/accountApp/
+   http://localhost:8080/book-keeper/

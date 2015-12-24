@@ -41,6 +41,20 @@ $( document ).ready(function() {
                 $(amount_cell).html( $(this).html()*$quantity_cell.html());
             }
         }
+
+        if($current_row_index > 6){
+            var all_cell_filled = true;
+            $('#invoice-table tr').eq($current_row_index).find('td').each(function(){
+                if($(this).html().trim() == "" || $(this).html().trim() == "&nbsp;"){
+                    all_cell_filled=false;
+                    return false;
+                }
+            });
+            if(all_cell_filled){
+                $('#invoice-table > tbody:last-child').append('<tr> <td>&nbsp;</td> <td>&nbsp;</td> <td>&nbsp;</td><td>&nbsp;</td> </tr>');
+            }
+        }
+
     });
 
     $( "#date" ).datepicker();
@@ -74,6 +88,6 @@ $( document ).ready(function() {
        // e.unbind(); //unbind. to stop multiple form submit.
     });
 
-    $("#invoice_form").submit(); //Submit  the FORM
 });
 
+$("#invoice_form").submit(); //Submit  the FORM

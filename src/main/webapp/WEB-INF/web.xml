@@ -5,6 +5,10 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
+    <listener>
+        <listener-class>com.laki.InitH2DBServer</listener-class>
+    </listener>
+
     <servlet>
         <servlet-name>Main</servlet-name>
         <servlet-class>com.laki.Main</servlet-class>

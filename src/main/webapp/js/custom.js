@@ -88,6 +88,28 @@ $( document ).ready(function() {
        // e.unbind(); //unbind. to stop multiple form submit.
     });
 
+    $("#customer_add_form").submit(function(e)
+    {
+        var postData = $(this).serializeArray();
+        var formURL = $(this).attr("action");
+        $.ajax(
+            {
+                url : formURL,
+                type: "POST",
+                data : postData,
+                success:function(data, textStatus, jqXHR)
+                {
+                    alert(data);
+                },
+                error: function(jqXHR, textStatus, errorThrown)
+                {
+                    //if fails
+                }
+            });
+        e.preventDefault(); //STOP default action
+        // e.unbind(); //unbind. to stop multiple form submit.
+    });
+
 });
 
 $("#invoice_form").submit(); //Submit  the FORM

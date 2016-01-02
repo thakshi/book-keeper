@@ -15,13 +15,12 @@ import java.sql.SQLException;
 
 public class InitH2DBServer implements javax.servlet.ServletContextListener{
 
-    Server tcpServer, webServer = null;
+    Server webServer = null;
 
 
     public void contextInitialized(ServletContextEvent servletContextEvent) {
 
         try {
-            tcpServer = Server.createTcpServer().start();
             webServer = Server.createWebServer().start();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -54,7 +53,6 @@ public class InitH2DBServer implements javax.servlet.ServletContextListener{
     }
 
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
-        tcpServer.stop();
         webServer.stop();
     }
 }

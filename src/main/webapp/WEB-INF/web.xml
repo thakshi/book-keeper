@@ -4,7 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <!--url redirection should happen in following way
+    1. create module and action separation
+        ex : module - invoice
+             action -add
 
+    2.  handle all redirection at Main class
+        ex : map servlet class as /invoice/*
+  -->
     <listener>
         <listener-class>com.laki.InitH2DBServer</listener-class>
     </listener>
@@ -37,6 +44,15 @@
     <servlet-mapping>
         <servlet-name>Main</servlet-name>
         <url-pattern>/welcome</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Main</servlet-name>
+        <url-pattern>/customer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Main</servlet-name>
+        <url-pattern>/customer/add</url-pattern>
     </servlet-mapping>
 
 </web-app>

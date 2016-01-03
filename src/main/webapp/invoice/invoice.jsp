@@ -9,6 +9,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/jquery.tabletojson.js"></script>
+    <script src="js/typeahead.js"></script>
     <script src="js/custom.js"></script>
 
     <title>create an invoice</title>

@@ -111,7 +111,6 @@ $( document ).ready(function() {
         // e.unbind(); //unbind. to stop multiple form submit.
     });
 
-``
 
     //begin typeahed part----------------------------------------------------------------------------------------------
 

@@ -1,3 +1,5 @@
+https://travis-ci.org/laki88/book-keeper.svg?branch=master
+
 how to use this software
 
 1. start tomcat. After started, you should able to access tomcat management console via http://localhost:8080.

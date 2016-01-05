@@ -39,6 +39,25 @@
             </div>
         </div>
         <div class="row">
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label for="address" class="control-label col-md-4">Address :</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" id="address" name="address" placeholder="Ratnapura">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label for="tpNo" class="control-label col-md-4">Telephone No :</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" id="tpNo" name="tpNo">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8" style="height:292px;overflow:auto;">
                 <table class="table-striped" id="invoice-table" name="invoice-table">

@@ -70,7 +70,12 @@ $( document ).ready(function() {
         var postData = $(this).serializeArray();
         var formURL = $(this).attr("action");
         var tableData = JSON.stringify($('#invoice-table').tableToJSON());
-        postData[2].value = tableData;
+        for(var i = 0;i < postData.length;i++){
+            if(postData[i].name == 'invoice-table'){
+                postData[i].value = tableData;
+                break;
+            }
+        }
         $.ajax(
             {
                 url : formURL,

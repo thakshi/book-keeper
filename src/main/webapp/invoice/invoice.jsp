@@ -18,7 +18,7 @@
 
 
 <div class="container">
-    <form name="invoice_form" id="invoice_form" method="post" action="invoice/add">
+    <form name="invoice_form" id="invoice_form" method="post" action="rest/invoice/add">
         <div class="row">
             <div class="col-md-5">
                 <div class="form-group">

@@ -19,7 +19,7 @@
 <img src="images/right_arrow.png" class="right-arrow" id="receive_payments_to_deposit">
 <img src="images/three_side_arrow.png" class="three_side_arrow" id="gin_to_enter_and_pay_bill">
 <img src="images/south_arrow.png" class="south_arrow" id="estimate_to_invoices">
-<div onclick="location.href='invoice'" class="event_box" id="invoices">Invoices</div>
+<div onclick="location.href='rest/invoice'" class="event_box" id="invoices">Invoices</div>
 <div onclick="location.href=#" class="event_box" id="enter_bill">Enter Bill</div>
 <div onclick="location.href=#" class="event_box" id="pay_bill">Pay Bill</div>
 <div onclick="location.href=#" class="event_box" id="receive_payments">Receive Payments</div>

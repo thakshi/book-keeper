@@ -1,4 +1,4 @@
-package com.laki;
+package com.laki.controllers;
 
 import com.laki.customer.CustomerImpl;
 
@@ -8,10 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 
-public class Main extends HttpServlet{
+public class MainController extends HttpServlet{
 
     protected void doGet( HttpServletRequest request,
                           HttpServletResponse response)

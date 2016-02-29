@@ -2,15 +2,15 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
-    <link rel="stylesheet" type="text/css" href="css/custom.css">
-    <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery.tabletojson.js"></script>
-    <script src="js/typeahead.js"></script>
-    <script src="js/custom.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/custom.css">
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/jquery.tabletojson.js"></script>
+    <script src="../js/typeahead.js"></script>
+    <script src="../js/custom.js"></script>
 
     <title>create an invoice</title>
 </head>
@@ -18,7 +18,7 @@
 
 
 <div class="container">
-    <form name="invoice_form" id="invoice_form" method="post" action="rest/invoice/add">
+    <form name="invoice_form" id="invoice_form" method="put" action="../services/invoice/add">
         <div class="row">
             <div class="col-md-5">
                 <div class="form-group">

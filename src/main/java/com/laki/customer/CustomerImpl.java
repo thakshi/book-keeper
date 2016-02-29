@@ -5,6 +5,6 @@ package com.laki.customer;
  */
 public class CustomerImpl {
     public static void addCustomer(String name, String address, String tpNo){
-        CustomerDao.addCustomer(name, address, tpNo);
+       // CustomerDao.addCustomer(name, address, tpNo);
     }
 }

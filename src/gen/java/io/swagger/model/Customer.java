@@ -13,14 +13,29 @@ import io.swagger.annotations.ApiModelProperty;
  **/
 
 @ApiModel(description = "customer data")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JaxRSServerCodegen", date = "2016-01-31T04:37:03.640Z")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-02-27T14:28:47.690Z")
 public class Customer   {
   
+  private Integer id = null;
   private String name = null;
   private String address = null;
   private String emailAddress = null;
   private String phoneNumber = null;
   private String faxNumber = null;
+
+  
+  /**
+   * customer id
+   **/
+  
+  @ApiModelProperty(value = "customer id")
+  @JsonProperty("id")
+  public Integer getId() {
+    return id;
+  }
+  public void setId(Integer id) {
+    this.id = id;
+  }
 
   
   /**
@@ -103,7 +118,8 @@ public class Customer   {
       return false;
     }
     Customer customer = (Customer) o;
-    return Objects.equals(name, customer.name) &&
+    return Objects.equals(id, customer.id) &&
+        Objects.equals(name, customer.name) &&
         Objects.equals(address, customer.address) &&
         Objects.equals(emailAddress, customer.emailAddress) &&
         Objects.equals(phoneNumber, customer.phoneNumber) &&
@@ -112,7 +128,7 @@ public class Customer   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, address, emailAddress, phoneNumber, faxNumber);
+    return Objects.hash(id, name, address, emailAddress, phoneNumber, faxNumber);
   }
 
   @Override
@@ -120,6 +136,7 @@ public class Customer   {
     StringBuilder sb = new StringBuilder();
     sb.append("class Customer {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    emailAddress: ").append(toIndentedString(emailAddress)).append("\n");

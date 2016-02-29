@@ -3,16 +3,9 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.laki</groupId>
   <artifactId>book-keeper</artifactId>
-  <packaging>pom</packaging>
+  <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>user-management</module>
-        <module>inventory-management</module>
-        <module>invoice-management</module>
-        <module>reports-management</module>
-        <module>controller-webapp</module>
-    </modules>
-    <name>Book keeper Maven Webapp</name>
+  <name>Book keeper Maven Webapp</name>
   <url>http://maven.apache.org</url>
 
   <dependencies>
@@ -195,7 +188,6 @@
   </build>
     <properties>
         <swagger-core-version>1.5.4</swagger-core-version>
-        <jetty-version>9.2.9.v20150224</jetty-version>
         <jersey-version>1.18.1</jersey-version>
         <slf4j-version>1.6.3</slf4j-version>
         <junit-version>4.8.1</junit-version>

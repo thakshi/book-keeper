@@ -29,35 +29,42 @@ import javax.ws.rs.*;
 
 
 @io.swagger.annotations.Api(description = "the invoice API")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JaxRSServerCodegen", date = "2016-01-31T04:37:03.640Z")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-02-27T14:28:47.690Z")
 public class InvoiceApi  {
    private final InvoiceApiService delegate = InvoiceApiServiceFactory.getInvoiceApi();
 
     @PUT
     @Path("/add")
-    @Consumes({ "application/json" })
+    @Consumes({ "application/x-www-form-urlencoded" })
     @Produces({ "application/json" })
-    @io.swagger.annotations.ApiOperation(value = "add an invoice", notes = "", response = Void.class, tags={  })
+    @io.swagger.annotations.ApiOperation(value = "add an invoice", notes = "", response = void.class, tags={  })
     @io.swagger.annotations.ApiResponses(value = { 
-        @io.swagger.annotations.ApiResponse(code = 204, message = "invoice added", response = Void.class),
+        @io.swagger.annotations.ApiResponse(code = 204, message = "invoice added", response = void.class),
         
-        @io.swagger.annotations.ApiResponse(code = 200, message = "Unexpected error", response = Void.class) })
+        @io.swagger.annotations.ApiResponse(code = 200, message = "Unexpected error", response = void.class) })
 
-    public Response invoiceAddPut(@ApiParam(value = "invoice number")@FormParam("invoiceNo")  String invoiceNo,@ApiParam(value = "customer name")@FormParam("name")  String name,@ApiParam(value = "invoice added date")@FormParam("date")  String date,@ApiParam(value = "customer address")@FormParam("address")  String address,@ApiParam(value = "purchasing order number")@FormParam("pONumber")  String pONumber,@ApiParam(value = "invoice data")@FormParam("invoiceTable")  String invoiceTable,@Context SecurityContext securityContext)
+    public Response invoiceAddPut(
+@ApiParam(value = "customer name", required=true)@FormParam("name")  String name,
+@ApiParam(value = "invoice added date", required=true)@FormParam("date")  String date,
+@ApiParam(value = "customer address", required=true)@FormParam("address")  String address,
+@ApiParam(value = "invoice data", required=true)@FormParam("invoiceTable")  String invoiceTable,
+@ApiParam(value = "invoice number")@FormParam("invoiceNo")  String invoiceNo,
+@ApiParam(value = "purchasing order number")@FormParam("pONumber")  String pONumber,@Context SecurityContext securityContext)
     throws NotFoundException {
-        return delegate.invoiceAddPut(invoiceNo,name,date,address,pONumber,invoiceTable,securityContext);
+        return delegate.invoiceAddPut(name,date,address,invoiceTable,invoiceNo,pONumber,securityContext);
     }
     @DELETE
     @Path("/delete/{invoice-id}")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
-    @io.swagger.annotations.ApiOperation(value = "delete an invoice", notes = "", response = Void.class, tags={  })
+    @io.swagger.annotations.ApiOperation(value = "delete an invoice", notes = "", response = void.class, tags={  })
     @io.swagger.annotations.ApiResponses(value = { 
-        @io.swagger.annotations.ApiResponse(code = 204, message = "invoice deleted", response = Void.class),
+        @io.swagger.annotations.ApiResponse(code = 204, message = "invoice deleted", response = void.class),
         
-        @io.swagger.annotations.ApiResponse(code = 200, message = "Unexpected error", response = Void.class) })
+        @io.swagger.annotations.ApiResponse(code = 200, message = "Unexpected error", response = void.class) })
 
-    public Response invoiceDeleteInvoiceIdDelete(@ApiParam(value = "",required=true) @PathParam("invoice-id") String invoiceId,@Context SecurityContext securityContext)
+    public Response invoiceDeleteInvoiceIdDelete(
+@ApiParam(value = "",required=true) @PathParam("invoice-id") String invoiceId,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.invoiceDeleteInvoiceIdDelete(invoiceId,securityContext);
     }
@@ -71,7 +78,8 @@ public class InvoiceApi  {
         
         @io.swagger.annotations.ApiResponse(code = 200, message = "Unexpected error", response = Invoice.class) })
 
-    public Response invoiceGetInvoiceIdGet(@ApiParam(value = "",required=true) @PathParam("invoice-id") String invoiceId,@Context SecurityContext securityContext)
+    public Response invoiceGetInvoiceIdGet(
+@ApiParam(value = "",required=true) @PathParam("invoice-id") String invoiceId,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.invoiceGetInvoiceIdGet(invoiceId,securityContext);
     }
@@ -93,13 +101,15 @@ public class InvoiceApi  {
     @Path("/update/{invoice-id}")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
-    @io.swagger.annotations.ApiOperation(value = "update an invoice", notes = "", response = Void.class, tags={  })
+    @io.swagger.annotations.ApiOperation(value = "update an invoice", notes = "", response = void.class, tags={  })
     @io.swagger.annotations.ApiResponses(value = { 
-        @io.swagger.annotations.ApiResponse(code = 204, message = "invoice updated", response = Void.class),
+        @io.swagger.annotations.ApiResponse(code = 204, message = "invoice updated", response = void.class),
         
-        @io.swagger.annotations.ApiResponse(code = 200, message = "Unexpected error", response = Void.class) })
+        @io.swagger.annotations.ApiResponse(code = 200, message = "Unexpected error", response = void.class) })
 
-    public Response invoiceUpdateInvoiceIdPost(@ApiParam(value = "",required=true) @PathParam("invoice-id") String invoiceId,@ApiParam(value = "Request Body" ) Payload2 payload,@Context SecurityContext securityContext)
+    public Response invoiceUpdateInvoiceIdPost(
+@ApiParam(value = "",required=true) @PathParam("invoice-id") String invoiceId,
+@ApiParam(value = "Request Body" ,required=true) Payload2 payload,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.invoiceUpdateInvoiceIdPost(invoiceId,payload,securityContext);
     }

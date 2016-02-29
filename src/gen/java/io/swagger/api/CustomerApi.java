@@ -29,7 +29,7 @@ import javax.ws.rs.*;
 
 
 @io.swagger.annotations.Api(description = "the customer API")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JaxRSServerCodegen", date = "2016-01-31T04:37:03.640Z")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-02-27T14:28:47.690Z")
 public class CustomerApi  {
    private final CustomerApiService delegate = CustomerApiServiceFactory.getCustomerApi();
 
@@ -37,13 +37,18 @@ public class CustomerApi  {
     @Path("/add")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
-    @io.swagger.annotations.ApiOperation(value = "add a customer", notes = "", response = Void.class, tags={  })
+    @io.swagger.annotations.ApiOperation(value = "add a customer", notes = "", response = void.class, tags={  })
     @io.swagger.annotations.ApiResponses(value = { 
-        @io.swagger.annotations.ApiResponse(code = 204, message = "customer added", response = Void.class),
+        @io.swagger.annotations.ApiResponse(code = 204, message = "customer added", response = void.class),
         
-        @io.swagger.annotations.ApiResponse(code = 200, message = "Unexpected error", response = Void.class) })
+        @io.swagger.annotations.ApiResponse(code = 200, message = "Unexpected error", response = void.class) })
 
-    public Response customerAddPut(@ApiParam(value = "customer name")@FormParam("name")  String name,@ApiParam(value = "customer address")@FormParam("address")  String address,@ApiParam(value = "customer email")@FormParam("emailAddress")  String emailAddress,@ApiParam(value = "customer phone number")@FormParam("phoneNumber")  String phoneNumber,@ApiParam(value = "customer fax number")@FormParam("faxNumber")  String faxNumber,@Context SecurityContext securityContext)
+    public Response customerAddPut(
+@ApiParam(value = "customer name", required=true)@FormParam("name")  String name,
+@ApiParam(value = "customer address")@FormParam("address")  String address,
+@ApiParam(value = "customer email")@FormParam("emailAddress")  String emailAddress,
+@ApiParam(value = "customer phone number")@FormParam("phoneNumber")  String phoneNumber,
+@ApiParam(value = "customer fax number")@FormParam("faxNumber")  String faxNumber,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.customerAddPut(name,address,emailAddress,phoneNumber,faxNumber,securityContext);
     }
@@ -51,13 +56,14 @@ public class CustomerApi  {
     @Path("/delete/{customer-id}")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
-    @io.swagger.annotations.ApiOperation(value = "delete a customer", notes = "", response = Void.class, tags={  })
+    @io.swagger.annotations.ApiOperation(value = "delete a customer", notes = "", response = void.class, tags={  })
     @io.swagger.annotations.ApiResponses(value = { 
-        @io.swagger.annotations.ApiResponse(code = 204, message = "customer deleted", response = Void.class),
+        @io.swagger.annotations.ApiResponse(code = 204, message = "customer deleted", response = void.class),
         
-        @io.swagger.annotations.ApiResponse(code = 200, message = "Unexpected error", response = Void.class) })
+        @io.swagger.annotations.ApiResponse(code = 200, message = "Unexpected error", response = void.class) })
 
-    public Response customerDeleteCustomerIdDelete(@ApiParam(value = "",required=true) @PathParam("customer-id") String customerId,@Context SecurityContext securityContext)
+    public Response customerDeleteCustomerIdDelete(
+@ApiParam(value = "",required=true) @PathParam("customer-id") String customerId,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.customerDeleteCustomerIdDelete(customerId,securityContext);
     }
@@ -71,7 +77,8 @@ public class CustomerApi  {
         
         @io.swagger.annotations.ApiResponse(code = 200, message = "Unexpected error", response = Customer.class) })
 
-    public Response customerGetCustomerIdGet(@ApiParam(value = "",required=true) @PathParam("customer-id") String customerId,@Context SecurityContext securityContext)
+    public Response customerGetCustomerIdGet(
+@ApiParam(value = "",required=true) @PathParam("customer-id") String customerId,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.customerGetCustomerIdGet(customerId,securityContext);
     }
@@ -93,13 +100,15 @@ public class CustomerApi  {
     @Path("/update/{customer-id}")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
-    @io.swagger.annotations.ApiOperation(value = "update a customer", notes = "", response = Void.class, tags={  })
+    @io.swagger.annotations.ApiOperation(value = "update a customer", notes = "", response = void.class, tags={  })
     @io.swagger.annotations.ApiResponses(value = { 
-        @io.swagger.annotations.ApiResponse(code = 204, message = "customer updated", response = Void.class),
+        @io.swagger.annotations.ApiResponse(code = 204, message = "customer updated", response = void.class),
         
-        @io.swagger.annotations.ApiResponse(code = 200, message = "Unexpected error", response = Void.class) })
+        @io.swagger.annotations.ApiResponse(code = 200, message = "Unexpected error", response = void.class) })
 
-    public Response customerUpdateCustomerIdPost(@ApiParam(value = "",required=true) @PathParam("customer-id") String customerId,@ApiParam(value = "Request Body" ) Payload payload,@Context SecurityContext securityContext)
+    public Response customerUpdateCustomerIdPost(
+@ApiParam(value = "",required=true) @PathParam("customer-id") String customerId,
+@ApiParam(value = "Request Body" ) Payload payload,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.customerUpdateCustomerIdPost(customerId,payload,securityContext);
     }

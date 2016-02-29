@@ -54,17 +54,17 @@ paths:
           in: formData
         - description: customer name
           name: name
-          required: false
+          required: true
           type: string
           in: formData
         - description: invoice added date
           name: date
-          required: false
+          required: true
           type: string
           in: formData
         - description: customer address
           name: address
-          required: false
+          required: true
           type: string
           in: formData
         - description: purchasing order number
@@ -74,11 +74,11 @@ paths:
           in: formData
         - description: invoice data
           name: invoice-table
-          required: false
+          required: true
           type: string
           in: formData
       consumes:
-        - application/json
+        - application/x-www-form-urlencoded
       responses:
         204:
           description:  invoice added
@@ -178,7 +178,7 @@ paths:
       parameters:
         - description: customer name
           name: name
-          required: false
+          required: true
           type: string
           in: formData
         - description: customer address
@@ -202,7 +202,7 @@ paths:
           type: string
           in: formData
       consumes:
-        - application/json
+        - application/x-www-form-urlencoded
       responses:
         204:
           description:  customer added
@@ -239,18 +239,18 @@ paths:
       parameters:
         - name: inventory-code
           type: string
-          required: false
+          required: true
           in: formData
         - name: name
           type: string
-          required: false
+          required: true
           in: formData
         - name: item-price
           type: string
-          required: false
+          required: true
           in: formData
       consumes:
-        - application/json
+        - application/x-www-form-urlencoded
       responses:
         204:
           description:  inventory item added
@@ -318,7 +318,7 @@ paths:
             type: object
           description: Request Body
           name: Payload
-          required: false
+          required: true
           in: body
       consumes:
         - application/json
@@ -397,6 +397,10 @@ definitions:
     type: object
     description: customer data
     properties:
+      id:
+        type: integer
+        format: int32
+        description: customer id
       name:
         type: string
         description: customer name

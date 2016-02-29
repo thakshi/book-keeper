@@ -72,6 +72,7 @@ $( document ).ready(function() {
         var tableData = JSON.stringify($('#invoice-table').tableToJSON());
         for(var i = 0;i < postData.length;i++){
             if(postData[i].name == 'invoice-table'){
+                postData[i].name = "invoiceTable";
                 postData[i].value = tableData;
                 break;
             }
@@ -101,7 +102,7 @@ $( document ).ready(function() {
         $.ajax(
             {
                 url : formURL,
-                type: "POST",
+                type: "PUT",
                 data : postData,
                 success:function(data, textStatus, jqXHR)
                 {

@@ -8,9 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-/**
- * Created by Lakshman on 1/2/16.
- */
+
 public class CustomerDao {
 
     public static boolean addCustomer(Customer customer){

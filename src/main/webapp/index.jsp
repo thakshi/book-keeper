@@ -27,5 +27,6 @@
 <img src="images/three_side_arrow.png" class="three_side_arrow" id="deposit_to_write_check_and_reconciliation">
 <div onclick="location.href=#" class="event_box" id="write_check">Write Check</div>
 <div onclick="location.href=#" class="event_box" id="reconciliation">Reconciliation</div>
+<a href="login/login.jsp">Login</a>
 </body>
 </html>

@@ -1,6 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <%
+        if(session.getAttribute("authenticated")!=null && session.getAttribute("authenticated").equals(true))
+        {
+            response.sendRedirect("../index.jsp");
+        }
+    %>
     <title>Login Page</title>
     <meta charset="UTF-8">
     <link rel="shortcut icon" type="image/png" href="../images/favicon.png"/>
@@ -16,15 +22,16 @@
 
 </head>
 <body>
+<input type="hidden" id="refreshed" value="no">
 <div class="container">
 
     <form class="form-signin">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="inputUserName" class="sr-only">Email address</label>
-        <input type="username" id="inputUserName" class="form-control" placeholder="User name" required="" autofocus="">
+        <input type="username" name="username" id="inputUserName" class="form-control" placeholder="User name" required="" autofocus="">
         <br>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required="">
         <div class="checkbox">
             <label>
                 <input type="checkbox" value="remember-me"> Remember me

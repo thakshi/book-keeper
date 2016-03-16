@@ -1,11 +1,21 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<head>
     <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <%
+        session = request.getSession(false);// don't create if it doesn't exist
+        String pageURL = "/";
+        if(session.isNew() || session.getAttribute("authenticated") == null || false == (boolean)session.getAttribute("authenticated")) {
+            response.sendRedirect("login/login.jsp");
+        }
+    %>
+</head>
 <body>
 <h2>Well come to Accounting App</h2>
 <%--<a href="invoice">--%>
     <%--<img src="images/invoice.jpeg" alt="invoice" style="width:100px;height:100px;">--%>
 <%--</a>--%>
-
+<input type="hidden" id="refreshed" value="no">
 <div onclick="location.href=#" class="event_box estimate">Estimate</div>
 <img src="images/front_right_arrow.png" class="front_right-arrow estimate_to_sales_order">
 <div onclick="location.href=#" class="event_box sales_order">Sales Order</div>
@@ -28,5 +38,6 @@
 <div onclick="location.href=#" class="event_box" id="write_check">Write Check</div>
 <div onclick="location.href=#" class="event_box" id="reconciliation">Reconciliation</div>
 <a href="login/login.jsp">Login</a>
+<a href="login/logout.jsp">Logout</a>
 </body>
 </html>

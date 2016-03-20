@@ -43,7 +43,7 @@
                 <div class="form-group">
                     <label for="address" class="control-label col-md-4">Address :</label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" id="address" name="address" placeholder="Ratnapura">
+                        <textarea id="address" name="address" class="form-control" rows="10" cols="30">  </textarea>
                     </div>
                 </div>
             </div>
@@ -63,10 +63,12 @@
                 <table class="table-striped" id="invoice-table" name="invoice-table">
                     <input type="hidden" name="invoice-table" value=""/>
                     <tr>
-                        <th>Name</th>
-                        <th>Unit Price</th>
+                        <th>Item Code</th>
                         <th>Quantity</th>
+                        <th>Description</th>
+                        <th>Unit Price</th>
                         <th>Amount</th>
+                        <th>Tax</th>
                     </tr>
                 </table>
             </div>

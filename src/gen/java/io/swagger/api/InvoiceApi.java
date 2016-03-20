@@ -1,29 +1,14 @@
 package io.swagger.api;
 
-import io.swagger.model.*;
-import io.swagger.api.InvoiceApiService;
-import io.swagger.api.factories.InvoiceApiServiceFactory;
-
 import io.swagger.annotations.ApiParam;
-
-import com.sun.jersey.multipart.FormDataParam;
-
-import io.swagger.model.Error;
+import io.swagger.api.factories.InvoiceApiServiceFactory;
 import io.swagger.model.Invoice;
 import io.swagger.model.Payload2;
 
-import java.util.List;
-import io.swagger.api.NotFoundException;
-
-import java.io.InputStream;
-
-import com.sun.jersey.core.header.FormDataContentDisposition;
-import com.sun.jersey.multipart.FormDataParam;
-
+import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
-import javax.ws.rs.*;
 
 @Path("/invoice")
 

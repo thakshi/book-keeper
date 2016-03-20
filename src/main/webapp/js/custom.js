@@ -1,4 +1,10 @@
 $( document ).ready(function() {
+
+    var e=document.getElementById("refreshed");
+    if(e.value=="no")e.value="yes";
+    else{e.value="no";location.reload();}
+
+
     $('form').attr('autocomplete', 'off');
     for(var i = 0; i < 10; i++) {
         var numberOfColumns = $('#invoice-table > thead > tr > th').length;
@@ -171,5 +177,30 @@ $( document ).ready(function() {
 
 
     //end typeahead part----------------------------------------------------------------------------------------------
+
+    $(".form-signin").submit(function(e) {
+
+        var url = "../services/login/login"; // the script where you handle the form input.
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: $(".form-signin").serialize(), // serializes the form's elements.
+            success: function(data)
+            {
+                var json = JSON.parse(data);
+                alert(json); // show response from the php script.
+                if(json.authenticated == true){
+                    window.location.href = "http://localhost:8080/book-keeper";
+                }
+
+            },
+            error: function(xhr, error){
+                alert(error);
+            }
+        });
+
+        e.preventDefault(); // avoid to execute the actual submit of the form.
+    });
 
 });

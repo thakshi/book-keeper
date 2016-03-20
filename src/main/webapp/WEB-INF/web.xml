@@ -12,9 +12,9 @@
     2.  handle all redirection at Main class
         ex : map servlet class as /invoice/*
   -->
-    <!--<listener>-->
-        <!--<listener-class>com.laki.InitH2DBServer</listener-class>-->
-    <!--</listener>-->
+    <listener>
+        <listener-class>com.laki.InitH2DBServer</listener-class>
+    </listener>
 
     <!--<servlet>-->
         <!--<servlet-name>Main</servlet-name>-->
@@ -31,7 +31,7 @@
         <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
         <init-param>
             <param-name>com.sun.jersey.config.property.packages</param-name>
-            <param-value>io.swagger.jaxrs.json;io.swagger.jaxrs.listing;io.swagger.api</param-value>
+            <param-value>io.swagger.jaxrs.json;io.swagger.jaxrs.listing;io.swagger.api, com.laki.controllers</param-value>
         </init-param>
         <init-param>
             <param-name>com.sun.jersey.spi.container.ContainerRequestFilters</param-name>

@@ -43,7 +43,7 @@
                 <div class="form-group">
                     <label for="address" class="control-label col-md-4">Address :</label>
                     <div class="col-md-8">
-                        <textarea id="address" name="address" class="form-control" rows="10" cols="30">  </textarea>
+                        <textarea id="address" name="address" class="form-control" rows="5" cols="30">  </textarea>
                     </div>
                 </div>
             </div>
@@ -62,6 +62,7 @@
             <div class="col-md-8" style="height:292px;overflow:auto;">
                 <table class="table-striped" id="invoice-table" name="invoice-table">
                     <input type="hidden" name="invoice-table" value=""/>
+                    <thead>
                     <tr>
                         <th>Item Code</th>
                         <th>Quantity</th>
@@ -70,6 +71,7 @@
                         <th>Amount</th>
                         <th>Tax</th>
                     </tr>
+                    </thead>
                 </table>
             </div>
             <div class="col-md-2"></div>

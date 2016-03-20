@@ -1,7 +1,13 @@
 $( document ).ready(function() {
     $('form').attr('autocomplete', 'off');
     for(var i = 0; i < 10; i++) {
-        $('#invoice-table > tbody:last-child').append('<tr> <td>&nbsp;</td> <td>&nbsp;</td> <td>&nbsp;</td><td>&nbsp;</td> </tr>');
+        var numberOfColumns = $('#invoice-table > thead > tr > th').length;
+        var newLineToBeAppended = "<tr>";
+        for(var i = 0; i <numberOfColumns; i++){
+            newLineToBeAppended +=  "<td>&nbsp;</td>";
+        }
+        newLineToBeAppended += "</tr>";
+        $('#invoice-table > tbody:last-child').append(newLineToBeAppended);
     }
 
     $('td').click(function(){

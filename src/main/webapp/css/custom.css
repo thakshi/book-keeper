@@ -1,3 +1,8 @@
+html, body, #container { height: 100%; }
+body > #container { height: auto; min-height: 100%;}
+
+#content { padding-bottom: 3em; }
+
 .front_right-arrow {
     height: 65px;
     width: 175px;

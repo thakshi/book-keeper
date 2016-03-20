@@ -1,9 +1,5 @@
 $( document ).ready(function() {
 
-    var e=document.getElementById("refreshed");
-    if(e.value=="no")e.value="yes";
-    else{e.value="no";location.reload();}
-
 
     $('form').attr('autocomplete', 'off');
     for(var i = 0; i < 10; i++) {
@@ -86,7 +82,7 @@ $( document ).ready(function() {
         $.ajax(
             {
                 url : formURL,
-                type: "POST",
+                type: "PUT",
                 data : postData,
                 success:function(data, textStatus, jqXHR)
                 {
@@ -183,9 +179,8 @@ $( document ).ready(function() {
             success: function(data)
             {
                 var json = JSON.parse(data);
-                alert(json); // show response from the php script.
                 if(json.authenticated == true){
-                    window.location.href = "http://localhost:8080/book-keeper";
+                    window.location.href = "/book-keeper";
                 }
 
             },

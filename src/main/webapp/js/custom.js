@@ -1,15 +1,41 @@
+var makeNewRowToTable = function(){
+    var numberOfColumns = $('#invoice-table > thead > tr > th').length;
+    var newLineToBeAppended = "<tr>";
+    for(var j = 0; j <numberOfColumns; j++){
+        newLineToBeAppended +=  "<td>&nbsp;</td>";
+    }
+    newLineToBeAppended += "</tr>";
+    $('#invoice-table > tbody:last-child').append(newLineToBeAppended);
+}
+
+var getTableCellByRowAndCol = function(table, rowIndex, columnIndex){
+    var rows = $('tr', table);
+    var current_row = rows.eq(rowIndex+1);
+    return current_row.find('td:eq('+columnIndex+')');
+}
+
+var makeAmountColumn = function(current_cell, table, firstColumn, secondColumn, amountColumn){
+    var current_row_index = current_cell.parent().index();
+    var current_col_index = current_cell.index();
+    if(current_col_index == firstColumn.index()){
+        if(current_cell.text().match(/^\d+$/) && getTableCellByRowAndCol(table, current_row_index, secondColumn.index()).text().match(/^\d+$/)){
+            getTableCellByRowAndCol(table, current_row_index, amountColumn.index()).html(current_cell.text()* getTableCellByRowAndCol(table, current_row_index, secondColumn.index()).text());
+        }
+    }
+    else if(current_col_index == secondColumn.index()){
+
+    }
+    else{
+        return;
+    }
+}
+
 $( document ).ready(function() {
 
 
     $('form').attr('autocomplete', 'off');
     for(var i = 0; i < 10; i++) {
-        var numberOfColumns = $('#invoice-table > thead > tr > th').length;
-        var newLineToBeAppended = "<tr>";
-        for(var i = 0; i <numberOfColumns; i++){
-            newLineToBeAppended +=  "<td>&nbsp;</td>";
-        }
-        newLineToBeAppended += "</tr>";
-        $('#invoice-table > tbody:last-child').append(newLineToBeAppended);
+        makeNewRowToTable();
     }
 
     $('td').click(function(){
@@ -21,48 +47,50 @@ $( document ).ready(function() {
     });
 
     $( "td" ).blur(function() {
-        var $th = $(this).closest('table').find('th').eq($(this).index());
-        var table = document.getElementById("invoice-table");
-        var $current_row_index = $(this).parent().index();
-        var row = table.rows[$current_row_index];
-        if($th.html() == "Quantity"){
-            var $unit_price_header_column_index = $('th:contains("Unit Price")').index();
+        makeAmountColumn($(this), $("#invoice-table"), $("#quantity") , $("#unit-price"), $("#amount"))
 
-            var unit_price_cell = row.cells[$unit_price_header_column_index];
-            var $unit_price_cell = $(unit_price_cell);
-
-            if($unit_price_cell.html().match( /^\d+$/)){
-                var $amount_header_column_index = $('th:contains("Amount")').index();
-                var amount_cell =  row.cells[$amount_header_column_index];
-                $(amount_cell).html( $(this).html()*$unit_price_cell.html());
-            }
-        }
-
-        if($th.html() == "Unit Price"){
-            var $quantity_header_column_index = $('th:contains("Quantity")').index();
-
-            var quantity_cell = row.cells[$quantity_header_column_index];
-            var $quantity_cell = $(quantity_cell);
-
-            if($quantity_cell.html().match( /^\d+$/)){
-                var $amount_header_column_index = $('th:contains("Amount")').index();
-                var amount_cell =  row.cells[$amount_header_column_index];
-                $(amount_cell).html( $(this).html()*$quantity_cell.html());
-            }
-        }
-
-        if($current_row_index > 6){
-            var all_cell_filled = true;
-            $('#invoice-table tr').eq($current_row_index).find('td').each(function(){
-                if($(this).html().trim() == "" || $(this).html().trim() == "&nbsp;"){
-                    all_cell_filled=false;
-                    return false;
-                }
-            });
-            if(all_cell_filled){
-                $('#invoice-table > tbody:last-child').append('<tr> <td>&nbsp;</td> <td>&nbsp;</td> <td>&nbsp;</td><td>&nbsp;</td> </tr>');
-            }
-        }
+        //var $th = $(this).closest('table').find('th').eq($(this).index());
+        //var table = document.getElementById("invoice-table");
+        //var $current_row_index = $(this).parent().index();
+        //var row = table.rows[$current_row_index];
+        //if($th.html() == "Quantity"){
+        //    var $unit_price_header_column_index = $('th:contains("Unit Price")').index();
+        //
+        //    var unit_price_cell = row.cells[$unit_price_header_column_index];
+        //    var $unit_price_cell = $(unit_price_cell);
+        //
+        //    if($unit_price_cell.html().match( /^\d+$/)){
+        //        var $amount_header_column_index = $('th:contains("Amount")').index();
+        //        var amount_cell =  row.cells[$amount_header_column_index];
+        //        $(amount_cell).html( $(this).html()*$unit_price_cell.html());
+        //    }
+        //}
+        //
+        //if($th.html() == "Unit Price"){
+        //    var $quantity_header_column_index = $('th:contains("Quantity")').index();
+        //
+        //    var quantity_cell = row.cells[$quantity_header_column_index];
+        //    var $quantity_cell = $(quantity_cell);
+        //
+        //    if($quantity_cell.html().match( /^\d+$/)){
+        //        var $amount_header_column_index = $('th:contains("Amount")').index();
+        //        var amount_cell =  row.cells[$amount_header_column_index];
+        //        $(amount_cell).html( $(this).html()*$quantity_cell.html());
+        //    }
+        //}
+        //
+        //if($current_row_index > 6){
+        //    var all_cell_filled = true;
+        //    $('#invoice-table tr').eq($current_row_index).find('td').each(function(){
+        //        if($(this).html().trim() == "" || $(this).html().trim() == "&nbsp;"){
+        //            all_cell_filled=false;
+        //            //return false;
+        //        }
+        //    });
+        //    if(all_cell_filled){
+        //        makeNewRowToTable();
+        //    }
+        //}
 
     });
 

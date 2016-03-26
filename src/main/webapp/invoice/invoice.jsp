@@ -64,14 +64,15 @@
                     <input type="hidden" name="invoice-table" value=""/>
                     <thead>
                     <tr>
-                        <th>Item Code</th>
-                        <th>Quantity</th>
-                        <th>Description</th>
-                        <th>Unit Price</th>
-                        <th>Amount</th>
-                        <th>Tax</th>
+                        <th id="item-code">Item Code</th>
+                        <th id="quantity">Quantity</th>
+                        <th id="description">Description</th>
+                        <th id="unit-price">Unit Price</th>
+                        <th id="amount">Amount</th>
+                        <th id="tax">Tax</th>
                     </tr>
                     </thead>
+                    <tbody></tbody>
                 </table>
             </div>
             <div class="col-md-2"></div>
